@@ -1,56 +1,5 @@
 #include "shell.h"
 
-char *exists(char *s1, char **s2)
-{
-	int i = 0, chk;
-	char *ptr;
-
-	for (; s2[i] != NULL; i++)
-	{
-		ptr = _strncon(s2[i], s1);
-		chk = access(ptr, F_OK);
-		if (chk == 0)
-			return (ptr);
-		else if (chk == -1)
-			free(ptr);
-	}
-	return (NULL);
-}
-
-
-
-/**
- *
- *
- */
-char *_strncon(char *s1, char *s2)
-{
-	int lens1, lens2, x = 0, y = 0;
-	char *fullPath;
-
-	lens1 = _strlen(s1);
-	lens2 = _strlen(s2);
-
-	fullPath = malloc(sizeof(char) * (lens1 + lens2 + 2));
-
-	if (fullPath == NULL)
-		return (NULL);
-
-	for (; s1[x] != '\0'; x++)
-		fullPath[x] = s1[x];
-
-	fullPath[x] = '/';
-	x++;
-
-	for (; s2[y] != '\0'; y++, x++)
-		fullPath[x] = s2[y];
-
-	fullPath[x] = '\0';
-
-	return (fullPath);
-}
-
-
 /**
  * _strcmp - comparing two strings
  * @s1: first string being compared
@@ -60,15 +9,15 @@ char *_strncon(char *s1, char *s2)
 
 int _strcmp(char *s1, char *s2)
 {
-        int strings = 0;
+	int strings = 0;
 
-        while (s1[strings] == s2[strings])
-        {
-                if (s1[strings] == '\0')
-                        return (0);
-                strings++;
-        }
-        return (s1[strings] - s2[strings]);
+	while (s1[strings] == s2[strings])
+	{
+		if (s1[strings] == '\0')
+			return (0);
+		strings++;
+	}
+	return (s1[strings] - s2[strings]);
 }
 
 /**
@@ -82,6 +31,7 @@ int _strcmp(char *s1, char *s2)
 char *_strcat(char *dest, char *src, int num)
 {
 	int index, concat;
+
 	for (index = 0; dest[index] != '\0'; index++)
 	{
 	}
@@ -104,13 +54,13 @@ char *_strcat(char *dest, char *src, int num)
  */
 unsigned int _strlen(char *S)
 {
-        unsigned int length = 0;
+	unsigned int length = 0;
 
-        for (length = 0; S[length]; length++)
+	for (length = 0; S[length]; length++)
 	{
-                ;
+		;
 	}
-        return (length);
+	return (length);
 }
 
 
@@ -124,6 +74,7 @@ unsigned int _strlen(char *S)
 char *_strcopy(char *dest, char *src)
 {
 	int index;
+
 	for (index = 0; src[index] != 0; index++)
 	{
 		dest[index] = src[index];
