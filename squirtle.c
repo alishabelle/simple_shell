@@ -86,13 +86,10 @@ int main(int argc, char *argv[], char *envp[])
 	ssize_t charCount;
 	int status/* , index = 0 */;
 
-	if (argc < 1)
-		return (-1);
-	signal(SIGINT, sighandler);
 	while (1)
-	{	write(STDERR_FILENO, "$ ", 2);
+	{
+		start(argc);
 		charCount = getline(&buffer, &buffsize, stdin);
-		print_inter();
 		if (*buffer == '\n')
 			continue;
 		if (charCount < 1)
@@ -123,12 +120,16 @@ int main(int argc, char *argv[], char *envp[])
 	return (0);
 }
 /**
- *inter - makes interactive mode
+ * start - use during start of function
+ *@n: takes in argc
  * Return: returns a void
  */
-void print_inter(void)
+void start(int n)
 {
-	if(isatty(STDIN_FILENO) == 1 && isatty(STDOUT_FILENO) == 1)
+	if (n < 0)
+		return;
+	signal(SIGINT, sighandler);
+	if (isatty(STDIN_FILENO) == 1 && isatty(STDOUT_FILENO) == 1)
 		fool.interactive = 1;
 	if (fool.interactive)
 		write(STDERR_FILENO, "$ ", 2);
