@@ -92,6 +92,7 @@ int main(int argc, char *argv[], char *envp[])
 	while (1)
 	{	write(STDERR_FILENO, "$ ", 2);
 		charCount = getline(&buffer, &buffsize, stdin);
+		print_inter();
 		if (*buffer == '\n')
 			continue;
 		if (charCount < 1)
@@ -120,4 +121,15 @@ int main(int argc, char *argv[], char *envp[])
 		write(STDERR_FILENO, "\n", 1);
 	free(buffer);
 	return (0);
+}
+/**
+ *inter - makes interactive mode
+ * Return: returns a void
+ */
+void print_inter(void)
+{
+	if(isatty(STDIN_FILENO) == 1 && isatty(STDOUT_FILENO) == 1)
+		fool.interactive = 1;
+	if (fool.interactive)
+		write(STDERR_FILENO, "$ ", 2);
 }
