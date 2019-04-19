@@ -1,6 +1,6 @@
 # Project 0x15 - simple_shell
 
-The goal of this project was to build a very simple version of the UNIX command language interpreter. The shell should display a prompt that would allow a user to type in a command. Once the command is executed, the prompt will display again. The command line is able to handle errors or display an error message if a command is not executable. 
+The goal of this project was to build a very simple version of the UNIX command language interpreter. The shell should display a prompt that would allow a user to type in a command. Once the command is executed, the prompt will display again. The command line is able to handle errors or display an error message if a command is not executable.
 
 ## Getting Started
 
@@ -37,7 +37,7 @@ $ ./hsh
 4. Enjoy using squirtle shell!
 
 ```
-$ 
+$
 ```
 
 ## Built With
