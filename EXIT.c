@@ -2,8 +2,8 @@
 
 /**
  * SHELLexit - exit shell
- *
- *
+ *@buffer: parameter
+ * Return - returns void
  */
 
 void SHELLexit(char *buffer)
