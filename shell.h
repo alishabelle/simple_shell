@@ -12,7 +12,19 @@
 #include <signal.h>
 #include <unistd.h>
 #include <fcntl.h>
+#include <stdbool.h>
 
+/**
+ *
+ *
+ */
+struct fool
+{
+	bool interactive;
+} fool;
+
+
+void start(int n);
 void freeArray(char **cmd);
 void SHELLexit(char *buffer);
 char *exists(char *s1, char **s2);
