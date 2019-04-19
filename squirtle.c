@@ -1,6 +1,9 @@
 #include "shell.h"
 #include <stdio.h>
 
+
+void start(int n);
+
 /**
  *exists - checking if the concatenated space exists
  *@s1: first string passed in
@@ -92,13 +95,12 @@ int main(int argc, char *argv[], char *envp[])
 	while (1)
 	{	write(STDERR_FILENO, "$ ", 2);
 		charCount = getline(&buffer, &buffsize, stdin);
-		print_inter();
 		if (*buffer == '\n')
 			continue;
 		if (charCount < 1)
 			break;
-		if (buffer[charCount - 1] == '\n')
-			buffer[charCount - 1] = '\0';
+			if (buffer[charCount - 1] == '\n')
+				buffer[charCount - 1] = '\0';
 		SHELLexit(buffer);
 		cmd = vect(buffer, charCount, "\t\r\n ");
 		path = PATHfind(envp);
@@ -112,9 +114,9 @@ int main(int argc, char *argv[], char *envp[])
 			freeArray(cmd);
 		}
 		else
-		{	wait(&status);
-			free(cmd[0]);
-			free(cmd);
+		{
+			wait(&status);
+			free(cmd[0]), free(cmd);
 		}
 	}
 	if (charCount < 0)
@@ -122,13 +124,20 @@ int main(int argc, char *argv[], char *envp[])
 	free(buffer);
 	return (0);
 }
+
+
 /**
- *inter - makes interactive mode
+ * start - makes interactive mode
  * Return: returns a void
- */
-void print_inter(void)
+ * @n: variable used for start function
+*/
+void start(int n)
 {
-	if(isatty(STDIN_FILENO) == 1 && isatty(STDOUT_FILENO) == 1)
+	if (n < 0)
+		return;
+	signal(SIGINT, sighandler);
+
+	if (isatty(STDIN_FILENO) == 1 && isatty(STDOUT_FILENO) == 1)
 		fool.interactive = 1;
 	if (fool.interactive)
 		write(STDERR_FILENO, "$ ", 2);
