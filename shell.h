@@ -12,7 +12,21 @@
 #include <signal.h>
 #include <unistd.h>
 #include <fcntl.h>
+#include <stdbool.h>
 
+/**
+ * struct fool - name of stuct
+ * @interactive: creates interactive mode
+ *
+ * Description: name of struct
+ */
+struct fool
+{
+	bool interactive;
+} fool;
+
+void print_inter(void);
+void start(int n);
 void freeArray(char **cmd);
 void SHELLexit(char *buffer);
 char *exists(char *s1, char **s2);
