@@ -1,7 +1,6 @@
 #ifndef _shell_
 #define _shell_
 
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
