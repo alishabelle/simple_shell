@@ -101,6 +101,9 @@ int main(int argc, char *argv[], char *envp[])
 				buffer[charCount - 1] = '\0';
 		SHELLexit(buffer);
 		cmd = vect(buffer, charCount, "\t\r\n ");
+
+		if (cmd == NULL || *cmd == NULL || **cmd == '\0')
+			continue;
 		path = PATHfind(envp);
 		fullPath = exists(cmd[0], path);
 		newProcess = fork();
@@ -124,27 +127,19 @@ int main(int argc, char *argv[], char *envp[])
 }
 
 
+
 /**
-<<<<<<< HEAD
- * start - makes interactive mode
- * Return: returns a void
- * @n: variable used for start function
-*/
-=======
  * start - use during start of function
  *@n: takes in argc
  * Return: returns a void
  */
->>>>>>> f1b670037d0a5301dd914cc8bd5892d4a8c46106
+
 void start(int n)
 {
 	if (n < 0)
 		return;
 	signal(SIGINT, sighandler);
-<<<<<<< HEAD
 
-=======
->>>>>>> f1b670037d0a5301dd914cc8bd5892d4a8c46106
 	if (isatty(STDIN_FILENO) == 1 && isatty(STDOUT_FILENO) == 1)
 		fool.interactive = 1;
 	if (fool.interactive)
