@@ -12,42 +12,18 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <stdbool.h>
-<<<<<<< HEAD
 
 /**
-<<<<<<< HEAD
  * struct fool - name of stuct
  * @interactive: creates interactive mode
  *
  * Description: name of struct
-=======
- *
- *
->>>>>>> f1b670037d0a5301dd914cc8bd5892d4a8c46106
  */
 struct fool
 {
 	bool interactive;
 } fool;
 
-<<<<<<< HEAD
-void print_inter(void);
-=======
-
->>>>>>> f1b670037d0a5301dd914cc8bd5892d4a8c46106
-=======
-
-/**
- *
- *
- */
-struct fool
-{
-	bool interactive;
-} fool;
-
-
->>>>>>> 2ee054178d97b5f84bf80308dbab203d75173ab7
 void start(int n);
 void freeArray(char **cmd);
 void SHELLexit(char *buffer);
