@@ -2,7 +2,7 @@
 
 
 /**
-  * PATHfind - Looks for PATH= in our enviroment
+  * PATHfind - Looks for PATH=(on our command line) in our enviroment
   * @enviroment: Our enviroment
   * Return: PATH
   */
