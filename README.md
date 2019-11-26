@@ -16,6 +16,7 @@ GCC should be installed on terminal in order to compile.
 ### Installing
 
 A step by step series of examples that tell you how to get a development env running
+![](shell.gif)(gif only shows how to run the executable)
 
 1. Cloning the repo
 
@@ -61,7 +62,7 @@ File|Description
 ---
 ## Authors
 
-* **Alisha Smith** - [Alisha Smith](https://github.com/alishabelle)
+* **Alisha Smith** - [Alisha Smith](https://github.com/alishabelle) 
 * **Diego Tardio** - [Diego Tardio](https://github.com/747-diego)
 
 ## License
