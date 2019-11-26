@@ -62,7 +62,7 @@ File|Description
 ---
 ## Authors
 
-* **Alisha Smith** - [Alisha Smith](https://github.com/alishabelle) 
+* **Alisha Smith** - [Alisha Smith](https://github.com/alishabelle) | [Linkedin](https://www.linkedin.com/in/alishabelle)
 * **Diego Tardio** - [Diego Tardio](https://github.com/747-diego)
 
 ## License
