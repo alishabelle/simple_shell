@@ -1,4 +1,5 @@
 #include "shell.h"
+/** helper functions */
 
 /**
  * _strcmp - comparing two strings
